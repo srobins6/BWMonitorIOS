@@ -68,52 +68,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-ss-Bwm" userLabel="Outer Stack View">
-                                <rect key="frame" x="8" y="72" width="359" height="668"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-ss-Bwm" userLabel="Outer Stack View">
+                                <rect key="frame" x="8" y="72" width="359" height="538"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5f-9c-bFK" userLabel="Inner Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="k5f-9c-bFK" userLabel="Inner Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="485"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-Gz-MzL">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="bwmon.ncsa.illinois.edu/metriccharts/api/datafeeds" borderStyle="roundedRect" placeholder="Datafeed Source Url" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eQc-Gz-MzL" userLabel="Datafeed Source Url">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="485"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" keyboardAppearance="alert"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-nW-ZzI">
+                                                <rect key="frame" x="308" y="0.0" width="51" height="485"/>
+                                                <state key="normal" title="Update"/>
+                                                <connections>
+                                                    <action selector="updateDatafeedSourceUrlButtonClick:" destination="vUu-nQ-MNY" eventType="touchUpInside" id="46a-8V-MH2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-nl-hvy">
-                                        <rect key="frame" x="0.0" y="30" width="359" height="638"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="638" id="it7-Ub-1ri"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oGB-im-1l9">
-                                                <rect key="frame" x="0.0" y="28" width="359" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGB-im-1l9" id="YID-WA-vSo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aaaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oG3-7y-QQe">
-                                                            <rect key="frame" x="85" y="11" width="36" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="oG3-7y-QQe" firstAttribute="leading" secondItem="YID-WA-vSo" secondAttribute="leadingMargin" constant="77" id="AOb-F4-Mk3"/>
-                                                        <constraint firstItem="oG3-7y-QQe" firstAttribute="centerY" secondItem="YID-WA-vSo" secondAttribute="centerY" id="WkJ-Mt-Gtr"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ac-gQ-p2d" userLabel="Datafeeds Table View">
+                                        <rect key="frame" x="0.0" y="488" width="359" height="50"/>
+                                        <connections>
+                                            <segue destination="pyq-gF-n1n" kind="embed" id="txq-s2-W1p"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="oNh-nl-hvy" firstAttribute="top" secondItem="E6W-ss-Bwm" secondAttribute="top" constant="30" id="dkf-dH-mfb"/>
+                                    <constraint firstItem="2Ac-gQ-p2d" firstAttribute="top" secondItem="k5f-9c-bFK" secondAttribute="bottom" constant="3" id="SPr-Cm-hkn"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Ac-gQ-p2d" secondAttribute="bottom" id="Usz-sE-iK5"/>
+                                    <constraint firstAttribute="top" secondItem="k5f-9c-bFK" secondAttribute="top" id="kwk-cA-Gyg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -122,8 +109,13 @@
                             <constraint firstItem="E6W-ss-Bwm" firstAttribute="leading" secondItem="UDD-Ei-tQE" secondAttribute="leadingMargin" constant="-8" id="EUk-7a-Jcz"/>
                             <constraint firstItem="E6W-ss-Bwm" firstAttribute="top" secondItem="EYO-LS-QwF" secondAttribute="bottom" constant="8" id="Pzy-Od-VwN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E6W-ss-Bwm" secondAttribute="trailing" constant="-8" id="d06-Ac-xn2"/>
+                            <constraint firstItem="jQN-Xo-NP9" firstAttribute="top" secondItem="E6W-ss-Bwm" secondAttribute="bottom" constant="8" id="u9F-fK-gKS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datafeedSourceUrlTextField" destination="eQc-Gz-MzL" id="xMl-4m-iiS"/>
+                        <outlet property="datafeedSourceUrlUpdateButton" destination="zQM-nW-ZzI" id="Z0p-tQ-hjQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSw-bs-W8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,6 +139,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIZ-sK-dK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-78" y="519"/>
+        </scene>
+        <!--Datafeed Table View Controller-->
+        <scene sceneID="LbF-Mq-rOc">
+            <objects>
+                <viewController id="pyq-gF-n1n" customClass="DatafeedTableViewController" customModule="BWMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wX0-el-uDd">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatafeedTableViewCell" rowHeight="51" id="6CR-re-0ee" customClass="DatafeedTableViewCell" customModule="BWMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="359" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6CR-re-0ee" id="my7-EM-vAl">
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUn-fb-276">
+                                            <rect key="frame" x="0.0" y="10" width="359" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datafeed Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgN-2a-g5G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpX-hI-Ufv">
+                                                    <rect key="frame" x="310" y="0.0" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JpX-hI-Ufv" firstAttribute="leading" secondItem="qgN-2a-g5G" secondAttribute="trailing" id="D5z-jf-dqa"/>
+                                                <constraint firstItem="JpX-hI-Ufv" firstAttribute="centerY" secondItem="IUn-fb-276" secondAttribute="centerY" id="LcM-6i-klb"/>
+                                                <constraint firstAttribute="trailing" secondItem="JpX-hI-Ufv" secondAttribute="trailing" id="RZU-pJ-nku"/>
+                                                <constraint firstItem="qgN-2a-g5G" firstAttribute="leading" secondItem="IUn-fb-276" secondAttribute="leading" id="l0L-1j-gBw"/>
+                                                <constraint firstItem="qgN-2a-g5G" firstAttribute="centerY" secondItem="IUn-fb-276" secondAttribute="centerY" id="p8t-jb-lPK"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IUn-fb-276" firstAttribute="centerY" secondItem="my7-EM-vAl" secondAttribute="centerY" id="IaX-mW-XFs"/>
+                                        <constraint firstAttribute="trailing" secondItem="IUn-fb-276" secondAttribute="trailing" id="KEq-MS-Vvw"/>
+                                        <constraint firstItem="IUn-fb-276" firstAttribute="leading" secondItem="my7-EM-vAl" secondAttribute="leading" id="gz7-Ch-8wd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="datafeedTitle" destination="qgN-2a-g5G" id="Oha-Qj-Zah"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pyq-gF-n1n" id="yUG-8g-toD"/>
+                            <outlet property="delegate" destination="pyq-gF-n1n" id="ER4-JS-XdM"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="datafeedsTableView" destination="wX0-el-uDd" id="gff-gs-Yau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9x-Ul-KYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="-801"/>
         </scene>
     </scenes>
     <resources>

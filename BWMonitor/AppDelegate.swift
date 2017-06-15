@@ -1,4 +1,3 @@
-//
 //  AppDelegate.swift
 //  BWMonitor
 //
@@ -9,21 +8,49 @@
 import UIKit
 
 struct datafeedKeys {
-    static let sourceURL = "datafeedSourceURL"
+    static let sourceUrl = "datafeedSourceUrl"
+    static let sourceUrlVersion = "datafeedSourceUrlVersion"
     static let subscribed = "datafeedSubscribed"
 }
 
 class Datafeed{
     var title: String
     var type: String
+    var category: String
     var url: String
-    var fields: Array<String>
-    init(title:String, type:String, url:String, fields:Array<String>) {
-        self.title = title
-        self.type = type
-        self.url = url
-        self.fields = fields
+    
+    var fields: [String]?
+    init(_ json:[String:Any]) {
+        self.title = (json["title"] as? String)!
+        self.type = (json["type"] as? String)!
+        self.category = (json["category"] as? String)!
+        self.url = (json["url"] as? String)!
+        if let fields = json["fields"] as?  [String]{
+            self.fields = fields
+        }
+        
     }
+    
+}
+
+func parseDatafeedsToDictionary(_ responseDatafeedsArray:[[String:Any]])->[String:[Datafeed]]  {
+    var datafeeds = [String:[Datafeed]]()
+    for responseDatafeed in responseDatafeedsArray{
+        let datafeed = Datafeed(responseDatafeed)
+        if datafeeds[datafeed.category] == nil{
+            datafeeds[datafeed.category] = [Datafeed]()
+        }
+        datafeeds[datafeed.category]?.append(datafeed)
+    }
+    return datafeeds
+}
+
+func parseDatafeedsToArray(_ responseDatafeedsArray:[[String:Any]])->[Datafeed]  {
+    var datafeeds = [Datafeed]()
+    for responseDatafeed in responseDatafeedsArray{
+        datafeeds.append(Datafeed(responseDatafeed))
+    }
+    return datafeeds
 }
 
 @UIApplicationMain
