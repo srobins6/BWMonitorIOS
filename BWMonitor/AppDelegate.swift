@@ -10,16 +10,20 @@ import UIKit
 struct datafeedKeys {
     static let sourceUrl = "datafeedSourceUrl"
     static let sourceUrlVersion = "datafeedSourceUrlVersion"
-    static let subscribed = "datafeedSubscribed"
+    static let subscribed = "subscribedDatafeeds"
 }
+let defaultSourceUrl = "bwmon.ncsa.illinois.edu/metriccharts/api/datafeeds"
 
 class Datafeed{
-    var title: String
-    var type: String
-    var category: String
-    var url: String
+    var title: String = ""
+    var type: String = ""
+    var category: String = ""
+    var url: String = ""
     
     var fields: [String]?
+    init(){
+        
+    }
     init(_ json:[String:Any]) {
         self.title = (json["title"] as? String)!
         self.type = (json["type"] as? String)!
@@ -33,25 +37,6 @@ class Datafeed{
     
 }
 
-func parseDatafeedsToDictionary(_ responseDatafeedsArray:[[String:Any]])->[String:[Datafeed]]  {
-    var datafeeds = [String:[Datafeed]]()
-    for responseDatafeed in responseDatafeedsArray{
-        let datafeed = Datafeed(responseDatafeed)
-        if datafeeds[datafeed.category] == nil{
-            datafeeds[datafeed.category] = [Datafeed]()
-        }
-        datafeeds[datafeed.category]?.append(datafeed)
-    }
-    return datafeeds
-}
-
-func parseDatafeedsToArray(_ responseDatafeedsArray:[[String:Any]])->[Datafeed]  {
-    var datafeeds = [Datafeed]()
-    for responseDatafeed in responseDatafeedsArray{
-        datafeeds.append(Datafeed(responseDatafeed))
-    }
-    return datafeeds
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -60,7 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        if defaults.stringArray(forKey: datafeedKeys.subscribed) == nil {
+            defaults.set([String](), forKey:datafeedKeys.subscribed)
+        }
         return true
     }
     

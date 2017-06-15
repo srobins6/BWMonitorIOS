@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1820A4551EF312E500B7F566 /* DatafeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820A4541EF312E500B7F566 /* DatafeedsViewController.swift */; };
-		1851A0C01EF3191900F43B42 /* DatafeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A0BE1EF3191900F43B42 /* DatafeedTableViewController.swift */; };
-		18648DA51EF0E7B8003E267B /* DatafeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18648DA31EF0E7B8003E267B /* DatafeedTableViewCell.swift */; };
+		1851A0C01EF3191900F43B42 /* DatafeedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A0BE1EF3191900F43B42 /* DatafeedsTableViewController.swift */; };
+		1851A0CC1EF345F700F43B42 /* DatafeedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A0CA1EF345F700F43B42 /* DatafeedTextViewController.swift */; };
+		1851A0CD1EF345F700F43B42 /* DatafeedTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1851A0CB1EF345F700F43B42 /* DatafeedTextViewController.xib */; };
+		1851A0D01EF34E5B00F43B42 /* DatafeedHTMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851A0CE1EF34E5B00F43B42 /* DatafeedHTMLViewController.swift */; };
+		1851A0D11EF34E5B00F43B42 /* DatafeedHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1851A0CF1EF34E5B00F43B42 /* DatafeedHTMLViewController.xib */; };
+		18648DA51EF0E7B8003E267B /* DatafeedsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18648DA31EF0E7B8003E267B /* DatafeedsTableViewCell.swift */; };
 		18E174601EEB1447009AA55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1745F1EEB1447009AA55A /* AppDelegate.swift */; };
 		18E174671EEB1447009AA55A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E174651EEB1447009AA55A /* Main.storyboard */; };
 		18E174691EEB1447009AA55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E174681EEB1447009AA55A /* Assets.xcassets */; };
@@ -51,8 +55,12 @@
 
 /* Begin PBXFileReference section */
 		1820A4541EF312E500B7F566 /* DatafeedsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedsViewController.swift; sourceTree = "<group>"; };
-		1851A0BE1EF3191900F43B42 /* DatafeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedTableViewController.swift; sourceTree = "<group>"; };
-		18648DA31EF0E7B8003E267B /* DatafeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedTableViewCell.swift; sourceTree = "<group>"; };
+		1851A0BE1EF3191900F43B42 /* DatafeedsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedsTableViewController.swift; sourceTree = "<group>"; };
+		1851A0CA1EF345F700F43B42 /* DatafeedTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedTextViewController.swift; sourceTree = "<group>"; };
+		1851A0CB1EF345F700F43B42 /* DatafeedTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedTextViewController.xib; sourceTree = "<group>"; };
+		1851A0CE1EF34E5B00F43B42 /* DatafeedHTMLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedHTMLViewController.swift; sourceTree = "<group>"; };
+		1851A0CF1EF34E5B00F43B42 /* DatafeedHTMLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedHTMLViewController.xib; sourceTree = "<group>"; };
+		18648DA31EF0E7B8003E267B /* DatafeedsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedsTableViewCell.swift; sourceTree = "<group>"; };
 		18E1745C1EEB1447009AA55A /* BWMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E1745F1EEB1447009AA55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E174661EEB1447009AA55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,13 +101,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1851A0C71EF345AE00F43B42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1851A0CB1EF345F700F43B42 /* DatafeedTextViewController.xib */,
+				1851A0CF1EF34E5B00F43B42 /* DatafeedHTMLViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		18648D9C1EEF3698003E267B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				18E174A11EEB4BEC009AA55A /* ViewDataTabBarController.swift */,
 				1820A4541EF312E500B7F566 /* DatafeedsViewController.swift */,
-				18648DA31EF0E7B8003E267B /* DatafeedTableViewCell.swift */,
-				1851A0BE1EF3191900F43B42 /* DatafeedTableViewController.swift */,
+				18648DA31EF0E7B8003E267B /* DatafeedsTableViewCell.swift */,
+				1851A0BE1EF3191900F43B42 /* DatafeedsTableViewController.swift */,
+				1851A0CA1EF345F700F43B42 /* DatafeedTextViewController.swift */,
+				1851A0CE1EF34E5B00F43B42 /* DatafeedHTMLViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +147,7 @@
 		18E1745E1EEB1447009AA55A /* BWMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				1851A0C71EF345AE00F43B42 /* Views */,
 				18648D9C1EEF3698003E267B /* Controllers */,
 				18E1745F1EEB1447009AA55A /* AppDelegate.swift */,
 				18E174651EEB1447009AA55A /* Main.storyboard */,
@@ -275,8 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E1746C1EEB1447009AA55A /* LaunchScreen.storyboard in Resources */,
+				1851A0CD1EF345F700F43B42 /* DatafeedTextViewController.xib in Resources */,
 				18E174691EEB1447009AA55A /* Assets.xcassets in Resources */,
 				18E174671EEB1447009AA55A /* Main.storyboard in Resources */,
+				1851A0D11EF34E5B00F43B42 /* DatafeedHTMLViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1851A0CC1EF345F700F43B42 /* DatafeedTextViewController.swift in Sources */,
+				1851A0D01EF34E5B00F43B42 /* DatafeedHTMLViewController.swift in Sources */,
 				18E174601EEB1447009AA55A /* AppDelegate.swift in Sources */,
-				18648DA51EF0E7B8003E267B /* DatafeedTableViewCell.swift in Sources */,
+				18648DA51EF0E7B8003E267B /* DatafeedsTableViewCell.swift in Sources */,
 				18E174A21EEB4BEC009AA55A /* ViewDataTabBarController.swift in Sources */,
-				1851A0C01EF3191900F43B42 /* DatafeedTableViewController.swift in Sources */,
+				1851A0C01EF3191900F43B42 /* DatafeedsTableViewController.swift in Sources */,
 				1820A4551EF312E500B7F566 /* DatafeedsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

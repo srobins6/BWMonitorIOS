@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewDataTabBarController: UITabBarController {
-
+    
     var datafeeds = [Datafeed]()
     
     func showDatafeeds(){
@@ -30,13 +30,42 @@ class ViewDataTabBarController: UITabBarController {
                 }
                 
             }
+            let subscribedDatafeeds = defaults.stringArray(forKey: datafeedKeys.subscribed)!
+            if subscribedDatafeeds.count == 0{
+                self.showDatafeeds()
+            }
             if let responseDatafeeds = dictionary?["datafeeds"] as? [Any]{
-                self.datafeeds = parseDatafeedsToArray(responseDatafeeds as! [[String : Any]])
+                var datafeeds = [Datafeed]()
+                var viewControllers = [UIViewController]()
+                for responseDatafeed in responseDatafeeds as! [[String : Any]]{
+                    let datafeed = Datafeed(responseDatafeed)
+                    if(subscribedDatafeeds.contains(datafeed.url) && datafeed.type != "notification"){
+                        datafeeds.append(datafeed)
+                        let tabBarItem = UITabBarItem(title: datafeed.title, image: #imageLiteral(resourceName: "first"), tag: datafeeds.count)
+                        if(datafeed.type == "text"){
+                            let viewController = DatafeedTextViewController()
+                            viewController.datafeed = datafeed
+                            viewController.tabBarItem = tabBarItem
+                            viewControllers.append(viewController)
+                        }else if datafeed.type=="html"{
+                            let viewController = DatafeedHTMLViewController()
+                            viewController.datafeed = datafeed
+                            viewController.tabBarItem = tabBarItem
+                            viewControllers.append(viewController)
+                        }
+
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.viewControllers = viewControllers
+                    self.datafeeds = datafeeds
+                }
+                
             }
             
         }
         
-
+        
     }
     func queryDatafeeds(_ sourceUrl: String){
         var sourceUrl = sourceUrl
@@ -44,36 +73,34 @@ class ViewDataTabBarController: UITabBarController {
             sourceUrl = "http://" + sourceUrl
         }
         let urlString = URL(string: sourceUrl)
-        if let url = urlString {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.showDatafeeds()
-                } else {
-                    if let usableData = data {
-                        self.showViewData(usableData)
-                    }
+        
+        let urlRequest = URLRequest(url: urlString!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData)
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                self.showDatafeeds()
+            } else {
+                if let usableData = data {
+                    self.showViewData(usableData)
                 }
             }
-            task.resume()
         }
+        task.resume()
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: datafeedKeys.sourceUrlVersion)
-        
         let sourceUrl = defaults.string(forKey: datafeedKeys.sourceUrl)
         if(sourceUrl == nil){
             self.showDatafeeds()
         }else{
             self.queryDatafeeds(sourceUrl!)
         }
-
+        
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super .viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let defaults = UserDefaults.standard
         let sourceUrl = defaults.string(forKey: datafeedKeys.sourceUrl)
         if(sourceUrl == nil){
@@ -86,12 +113,12 @@ class ViewDataTabBarController: UITabBarController {
             self.queryDatafeeds(sourceUrl!)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
 }
