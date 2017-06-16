@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,12 +38,19 @@
             <objects>
                 <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="ViewDataTabBarController" customModule="BWMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fzq-wa-h4G">
-                        <barButtonItem key="rightBarButtonItem" tag="1" title="Datafeeds" id="nnj-sP-ZKf">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <connections>
-                                <segue destination="vUu-nQ-MNY" kind="show" identifier="showDatafeeds" id="yxL-BO-Hiy"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem tag="1" title="Datafeeds" id="nnj-sP-ZKf">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <segue destination="vUu-nQ-MNY" kind="show" identifier="showDatafeeds" id="yxL-BO-Hiy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="r80-LP-Id4">
+                                <connections>
+                                    <action selector="refreshButtonClick:" destination="49e-Tb-3d3" id="g9m-or-SFz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -133,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="22" width="359" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6CR-re-0ee" id="my7-EM-vAl">
-                                    <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="359" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUn-fb-276">

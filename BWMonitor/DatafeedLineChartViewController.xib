@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatafeedLineChartViewController" customModule="BWMonitor" customModuleProvider="target">
             <connections>
                 <outlet property="datafeedLineChartViewLineChartView" destination="AzX-3u-t4H" id="rnH-vj-G8Q"/>
+                <outlet property="view" destination="AzX-3u-t4H" id="kUi-fz-zeQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

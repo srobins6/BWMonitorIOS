@@ -14,10 +14,13 @@ class DatafeedHTMLViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = []
+        self.navigationController?.navigationBar.isTranslucent = false
 
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         var datafeedUrl = self.datafeed.url
         if(datafeedUrl.lowercased().range(of:"^https?:\\/\\/", options: .regularExpression) == nil){
             datafeedUrl = "http://" + datafeedUrl

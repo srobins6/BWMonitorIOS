@@ -20,15 +20,13 @@
 		18E1746C1EEB1447009AA55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E1746A1EEB1447009AA55A /* LaunchScreen.storyboard */; };
 		18E174771EEB1448009AA55A /* BWMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E174761EEB1448009AA55A /* BWMonitorTests.swift */; };
 		18E174821EEB1448009AA55A /* BWMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E174811EEB1448009AA55A /* BWMonitorUITests.swift */; };
-		18E174A21EEB4BEC009AA55A /* ViewDataTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E174A11EEB4BEC009AA55A /* ViewDataTabBarController.swift */; };
 		18EB580A1EF45A3200FD9757 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB58071EF45A2B00FD9757 /* Charts.framework */; };
 		18EB580B1EF45A3200FD9757 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB58071EF45A2B00FD9757 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18EB58101EF45B0500FD9757 /* DatafeedLineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB580E1EF45B0500FD9757 /* DatafeedLineChartViewController.swift */; };
 		18EB58111EF45B0500FD9757 /* DatafeedLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB580F1EF45B0500FD9757 /* DatafeedLineChartViewController.xib */; };
 		18EB58141EF45B1D00FD9757 /* DatafeedPieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB58121EF45B1D00FD9757 /* DatafeedPieChartViewController.swift */; };
 		18EB58151EF45B1D00FD9757 /* DatafeedPieChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB58131EF45B1D00FD9757 /* DatafeedPieChartViewController.xib */; };
-		18EB58191EF45D9400FD9757 /* DatafeedTimeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB58171EF45D9400FD9757 /* DatafeedTimeChartViewController.swift */; };
-		18EB581A1EF45D9400FD9757 /* DatafeedTimeChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB58181EF45D9400FD9757 /* DatafeedTimeChartViewController.xib */; };
+		18EB58281EF465FF00FD9757 /* ViewDataTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB58271EF465FF00FD9757 /* ViewDataTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,14 +101,12 @@
 		18E1747D1EEB1448009AA55A /* BWMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E174811EEB1448009AA55A /* BWMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWMonitorUITests.swift; sourceTree = "<group>"; };
 		18E174831EEB1448009AA55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18E174A11EEB4BEC009AA55A /* ViewDataTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDataTabBarController.swift; sourceTree = "<group>"; };
 		18EB58011EF45A2A00FD9757 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		18EB580E1EF45B0500FD9757 /* DatafeedLineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedLineChartViewController.swift; sourceTree = "<group>"; };
 		18EB580F1EF45B0500FD9757 /* DatafeedLineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedLineChartViewController.xib; sourceTree = "<group>"; };
 		18EB58121EF45B1D00FD9757 /* DatafeedPieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedPieChartViewController.swift; sourceTree = "<group>"; };
 		18EB58131EF45B1D00FD9757 /* DatafeedPieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedPieChartViewController.xib; sourceTree = "<group>"; };
-		18EB58171EF45D9400FD9757 /* DatafeedTimeChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedTimeChartViewController.swift; sourceTree = "<group>"; };
-		18EB58181EF45D9400FD9757 /* DatafeedTimeChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedTimeChartViewController.xib; sourceTree = "<group>"; };
+		18EB58271EF465FF00FD9757 /* ViewDataTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDataTabBarController.swift; path = ../../../.Trash/ViewDataTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +142,6 @@
 				1851A0CF1EF34E5B00F43B42 /* DatafeedHTMLViewController.xib */,
 				18EB580F1EF45B0500FD9757 /* DatafeedLineChartViewController.xib */,
 				18EB58131EF45B1D00FD9757 /* DatafeedPieChartViewController.xib */,
-				18EB58181EF45D9400FD9757 /* DatafeedTimeChartViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -154,13 +149,12 @@
 		18648D9C1EEF3698003E267B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18E174A11EEB4BEC009AA55A /* ViewDataTabBarController.swift */,
+				18EB58271EF465FF00FD9757 /* ViewDataTabBarController.swift */,
 				1820A4541EF312E500B7F566 /* DatafeedsViewController.swift */,
 				18648DA31EF0E7B8003E267B /* DatafeedsTableViewCell.swift */,
 				1851A0BE1EF3191900F43B42 /* DatafeedsTableViewController.swift */,
 				1851A0CA1EF345F700F43B42 /* DatafeedTextViewController.swift */,
 				1851A0CE1EF34E5B00F43B42 /* DatafeedHTMLViewController.swift */,
-				18EB58171EF45D9400FD9757 /* DatafeedTimeChartViewController.swift */,
 				18EB580E1EF45B0500FD9757 /* DatafeedLineChartViewController.swift */,
 				18EB58121EF45B1D00FD9757 /* DatafeedPieChartViewController.swift */,
 			);
@@ -366,7 +360,6 @@
 			files = (
 				18E1746C1EEB1447009AA55A /* LaunchScreen.storyboard in Resources */,
 				1851A0CD1EF345F700F43B42 /* DatafeedTextViewController.xib in Resources */,
-				18EB581A1EF45D9400FD9757 /* DatafeedTimeChartViewController.xib in Resources */,
 				18E174691EEB1447009AA55A /* Assets.xcassets in Resources */,
 				18EB58111EF45B0500FD9757 /* DatafeedLineChartViewController.xib in Resources */,
 				18EB58151EF45B1D00FD9757 /* DatafeedPieChartViewController.xib in Resources */,
@@ -400,8 +393,7 @@
 				1851A0D01EF34E5B00F43B42 /* DatafeedHTMLViewController.swift in Sources */,
 				18E174601EEB1447009AA55A /* AppDelegate.swift in Sources */,
 				18648DA51EF0E7B8003E267B /* DatafeedsTableViewCell.swift in Sources */,
-				18EB58191EF45D9400FD9757 /* DatafeedTimeChartViewController.swift in Sources */,
-				18E174A21EEB4BEC009AA55A /* ViewDataTabBarController.swift in Sources */,
+				18EB58281EF465FF00FD9757 /* ViewDataTabBarController.swift in Sources */,
 				1851A0C01EF3191900F43B42 /* DatafeedsTableViewController.swift in Sources */,
 				1820A4551EF312E500B7F566 /* DatafeedsViewController.swift in Sources */,
 				18EB58101EF45B0500FD9757 /* DatafeedLineChartViewController.swift in Sources */,

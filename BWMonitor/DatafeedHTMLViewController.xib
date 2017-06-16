@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatafeedHTMLViewController" customModule="BWMonitor" customModuleProvider="target">
             <connections>
                 <outlet property="datafeedHTMLViewWebView" destination="RPX-U9-LWD" id="Jrg-Hk-kjY"/>
+                <outlet property="view" destination="RPX-U9-LWD" id="6Nx-4y-0SC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
