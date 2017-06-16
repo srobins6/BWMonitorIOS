@@ -1,0 +1,6 @@
+framework module Pods_BWMonitor {
+  umbrella header "Pods-BWMonitor-umbrella.h"
+
+  export *
+  module * { export * }
+}
