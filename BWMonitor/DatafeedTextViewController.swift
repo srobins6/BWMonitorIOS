@@ -20,7 +20,6 @@ class DatafeedTextViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        print(1)
         super.viewDidAppear(animated)
         var datafeedUrl = self.datafeed.url
         if(datafeedUrl.lowercased().range(of:"^https?:\\/\\/", options: .regularExpression) == nil){
