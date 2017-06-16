@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Charts
 class ViewDataTabBarController: UITabBarController {
     
     var datafeeds = [Datafeed]()
@@ -52,8 +52,22 @@ class ViewDataTabBarController: UITabBarController {
                             viewController.datafeed = datafeed
                             viewController.tabBarItem = tabBarItem
                             viewControllers.append(viewController)
+                        }else if datafeed.type == "linechart"{
+                            let viewController = DatafeedLineChartViewController()
+                            viewController.datafeed = datafeed
+                            viewController.tabBarItem = tabBarItem
+                            viewControllers.append(viewController)
+                        }else if datafeed.type == "timechart"{
+                            let viewController = DatafeedLineChartViewController()
+                            viewController.datafeed = datafeed
+                            viewController.tabBarItem = tabBarItem
+                            viewControllers.append(viewController)
+                        }else if datafeed.type == "piechart"{
+                            let viewController = DatafeedPieChartViewController()
+                            viewController.datafeed = datafeed
+                            viewController.tabBarItem = tabBarItem
+                            viewControllers.append(viewController)
                         }
-
                     }
                 }
                 DispatchQueue.main.async {
