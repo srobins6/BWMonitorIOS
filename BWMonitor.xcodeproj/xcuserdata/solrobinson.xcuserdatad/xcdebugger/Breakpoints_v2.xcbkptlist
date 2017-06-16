@@ -30,11 +30,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BWMonitor/AppDelegate.swift"
-            timestampString = "518730871.954991"
+            timestampString = "519342502.512765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "Datafeed"
             landmarkType = "3">
          </BreakpointContent>

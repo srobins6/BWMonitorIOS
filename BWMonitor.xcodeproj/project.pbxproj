@@ -25,6 +25,7 @@
 		18EB58141EF45B1D00FD9757 /* DatafeedPieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB58121EF45B1D00FD9757 /* DatafeedPieChartViewController.swift */; };
 		18EB58151EF45B1D00FD9757 /* DatafeedPieChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EB58131EF45B1D00FD9757 /* DatafeedPieChartViewController.xib */; };
 		18EB58281EF465FF00FD9757 /* ViewDataTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB58271EF465FF00FD9757 /* ViewDataTabBarController.swift */; };
+		18EB59C61EF485D600FD9757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EB59C51EF485D600FD9757 /* GoogleService-Info.plist */; };
 		7966788C88430D1646A6906F /* Pods_BWMonitorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DB7B149E8EA77FDF6F4E0F /* Pods_BWMonitorUITests.framework */; };
 		BF34335DD1FD27002333F78E /* Pods_BWMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6CD56CBDBA515D2C1F629F /* Pods_BWMonitor.framework */; };
 		DF9B998F8689A1BA1880480C /* Pods_BWMonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EDA38EC8AF9654E04561D5 /* Pods_BWMonitorTests.framework */; };
@@ -85,6 +86,7 @@
 		18EB58121EF45B1D00FD9757 /* DatafeedPieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatafeedPieChartViewController.swift; sourceTree = "<group>"; };
 		18EB58131EF45B1D00FD9757 /* DatafeedPieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatafeedPieChartViewController.xib; sourceTree = "<group>"; };
 		18EB58271EF465FF00FD9757 /* ViewDataTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDataTabBarController.swift; path = ../../../.Trash/ViewDataTabBarController.swift; sourceTree = "<group>"; };
+		18EB59C51EF485D600FD9757 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20DB7B149E8EA77FDF6F4E0F /* Pods_BWMonitorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BWMonitorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2321E63F4D97B1B8D6CD2FF5 /* Pods-BWMonitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BWMonitorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BWMonitorUITests/Pods-BWMonitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		30EDA38EC8AF9654E04561D5 /* Pods_BWMonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BWMonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 				18E174681EEB1447009AA55A /* Assets.xcassets */,
 				18E1746A1EEB1447009AA55A /* LaunchScreen.storyboard */,
 				18E1746D1EEB1447009AA55A /* Info.plist */,
+				18EB59C51EF485D600FD9757 /* GoogleService-Info.plist */,
 			);
 			path = BWMonitor;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E1746C1EEB1447009AA55A /* LaunchScreen.storyboard in Resources */,
+				18EB59C61EF485D600FD9757 /* GoogleService-Info.plist in Resources */,
 				1851A0CD1EF345F700F43B42 /* DatafeedTextViewController.xib in Resources */,
 				18E174691EEB1447009AA55A /* Assets.xcassets in Resources */,
 				18EB58111EF45B0500FD9757 /* DatafeedLineChartViewController.xib in Resources */,

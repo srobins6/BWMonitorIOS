@@ -6,7 +6,8 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
+import UserNotifications
 
 struct datafeedKeys {
     static let sourceUrl = "datafeedSourceUrl"
@@ -36,6 +37,11 @@ class Datafeed{
         
     }
     
+    func getTopic() -> String{
+        let regex = try! NSRegularExpression(pattern: "\\s", options: [])
+        return regex.stringByReplacingMatches(in: self.title, options: [], range: NSMakeRange(0, self.title.characters.count), withTemplate: "_")
+    }
+    
 }
 
 
@@ -50,6 +56,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.stringArray(forKey: datafeedKeys.subscribed) == nil {
             defaults.set([String](), forKey:datafeedKeys.subscribed)
         }
+        FirebaseApp.configure()
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+
         return true
     }
     

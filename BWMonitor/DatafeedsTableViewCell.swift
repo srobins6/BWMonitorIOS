@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseMessaging
 
 class DatafeedsTableViewCell: UITableViewCell {
     @IBOutlet weak var datafeedSubscribedSwitch: UISwitch!
@@ -18,8 +20,15 @@ class DatafeedsTableViewCell: UITableViewCell {
         var subscribedDatafeeds = defaults.stringArray(forKey: datafeedKeys.subscribed)!
         if(self.datafeedSubscribedSwitch.isOn && !subscribedDatafeeds.contains(datafeed.url)){
             subscribedDatafeeds.append(datafeed.url)
+            if(self.datafeed.type == "notification"){
+                Messaging.messaging().subscribe(toTopic: self.datafeed.getTopic())
+            }
         }else if (!self.datafeedSubscribedSwitch.isOn && subscribedDatafeeds.contains(datafeed.url)){
             subscribedDatafeeds.remove(at: subscribedDatafeeds.index(of: datafeed.url)!)
+            if(self.datafeed.type == "notification"){
+                Messaging.messaging().unsubscribe(fromTopic: self.datafeed.getTopic())
+            }
+
         }
         defaults.set(subscribedDatafeeds, forKey: datafeedKeys.subscribed)
 

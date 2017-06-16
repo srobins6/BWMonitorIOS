@@ -46,7 +46,7 @@ class DatafeedPieChartViewController: UIViewController {
                         set.entryLabelFont=UIFont.systemFont(ofSize: 12)
                         set.setColors(ChartColorTemplates.vordiplom(), alpha: 1.0)
                         let data = PieChartData(dataSet: set)
-                        self.datafeedPieChartViewPieChartView.isMultipleTouchEnabled = false
+                        self.datafeedPieChartViewPieChartView.chartDescription?.enabled = false
                         self.datafeedPieChartViewPieChartView.drawHoleEnabled = false
                         self.datafeedPieChartViewPieChartView.data = data
                         self.datafeedPieChartViewPieChartView.legend.enabled = false
